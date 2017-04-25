@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201704251819163_migration3.Designer.cs">
       <DependentUpon>201704251819163_migration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704252220011_emailOut.cs" />
+    <Compile Include="Migrations\201704252220011_emailOut.Designer.cs">
+      <DependentUpon>201704252220011_emailOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Citas_consulares.cs" />
@@ -336,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704251819163_migration3.resx">
       <DependentUpon>201704251819163_migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704252220011_emailOut.resx">
+      <DependentUpon>201704252220011_emailOut.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,6 +11,7 @@ using AsecordLogin.Models;
 
 namespace AsecordLogin.Controllers
 {
+    [Authorize]
     public class ClientesController : Controller
     {
         private AsesoriaContext db = new AsesoriaContext();
