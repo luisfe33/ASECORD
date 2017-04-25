@@ -1,0 +1,81 @@
+﻿@model AsecordLogin.Models.Recibos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recibos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Concepto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Concepto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Forma_pago)
+        </dt>
+
+        <dd>
+            @switch (Model.Forma_pago)
+            {
+                case 1:
+                    <p>Efectivo</p>
+                    break;
+
+                case 2:
+                    <p>Transferencia</p>
+                    break;
+
+                case 3:
+                    <p>Cheque</p>
+                    break;
+
+                case 4:
+                    <p>Tarjeta</p>
+                    break;
+
+                case 5:
+                    <p>Dolares</p>
+                    break;
+            }
+            @*@Html.DisplayFor(model => model.Forma_pago)*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReciboID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AsecordLogin.Models.Citas_locales>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Citas ASECORD</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar Cita", "Edit", new { id = item.CitaID }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.CitaID }) |*@
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.CitaID })
+            </td>
+        </tr>
+    }
+
+</table>

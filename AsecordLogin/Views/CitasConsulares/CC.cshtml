@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AsecordLogin.Models.Clientes>
+
+@{
+    ViewBag.Title = "CC";
+}
+
+<h2>CC</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CLienteID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLienteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+
+            <td>
+                @Html.ActionLink("Agregar Cita", "Create", new { id = item.CLienteID }, new { @class = "btn btn-success btn-sm " })
+
+            </td>
+        </tr>
+    }
+
+</table>

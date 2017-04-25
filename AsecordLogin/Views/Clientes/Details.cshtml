@@ -1,0 +1,139 @@
+﻿@model AsecordLogin.Models.Clientes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Clientes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_civil)
+        </dt>
+
+        <dd>
+            @if (Model.Estado_civil == "1")
+            {
+                <p>Soltero</p>
+            }
+            else if (Model.Estado_civil == "2")
+            {
+                <p>Casado</p>
+            }
+            else if (Model.Estado_civil == "3")
+            {
+                <p>Union Libre</p>
+            }
+            else if (Model.Estado_civil == "4")
+            {
+                <p>Viudo</p>
+            }
+            @*@Html.DisplayFor(model => model.Estado_civil)*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_ingreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_ingreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pasaporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pasaporte)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CLienteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AsecordLogin.Models.Citas_consulares>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Citas Consulares</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lugar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_visa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lugar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_visa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar Cita", "Edit", new { id = item.CitaID }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.CitaID }) |*@
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.CitaID })
+            </td>
+        </tr>
+    }
+
+</table>

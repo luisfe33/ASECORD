@@ -1,0 +1,234 @@
+﻿@model IEnumerable<AsecordLogin.Models.Clientes>
+
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2>Reportes por Estatus</h2>
+<div class="col-md-offset-6">
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.TextBox("searchString")
+            <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </p>
+
+    }
+</div>
+
+
+    <table class="table table-hover ctable-cover">
+        <tr>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.CLienteID)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_1)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_2)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_3)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_4)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_5)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_6)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_7)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_8)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_9)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Estatus_10)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+
+
+            <tr>
+
+
+
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.CLienteID)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+
+
+                <td align="center">
+
+                    @if (item.Estatus_1 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_1)*@
+
+
+                </td>
+                <td align="center">
+                    @if (item.Estatus_2 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_2)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_3 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_3)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_4 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_4)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_5 == "1")
+                {
+                        <i class="fa fa-exclamation"></i>
+                    }
+                    else
+                if (item.Estatus_5 == "2")
+                    {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+
+                    }
+
+                    @*@Html.DisplayFor(modelItem => item.Estatus_5)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_6 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_6)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_7 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_7)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_8 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times"></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_8)*@
+                </td>
+                <td align="center">
+                    @if (item.Estatus_9 == "1")
+                {
+                        <i class="fa fa-check"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-times "></i>
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Estatus_9)*@
+                </td>
+                @*<td align="center">*@
+
+                @if (item.Estatus_10 == "4")
+                {
+                    <td align="center" class="success">
+                        <i class="fa fa-check"></i>
+                    </td>
+                }
+                else
+
+
+                            if (item.Estatus_10 == "3")
+                {
+
+                    <td align="center" class="danger">
+
+                        <i class="fa fa-times"></i>
+                    </td>
+                }
+                else
+                {
+                    <td align="center">
+
+                        <i class="fa fa-exclamation"></i>
+                    </td>
+
+                }
+                @*@Html.DisplayFor(modelItem => item.Estatus_10)*@
+                @*</td>*@
+
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.CLienteID }) |*@
+
+                    @Html.ActionLink("Detalles", "Details", new { id = item.CLienteID })
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.CLienteID })*@
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<AsecordLogin.Models.Recibos>
+
+@{
+    ViewBag.Title = "Recibos";
+}
+
+<h2>Recibos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table  table-condensed table-hover">
+    <tr>
+        <th>
+            Numero de Recibo
+            @*@Html.DisplayNameFor(model=> model.ReciboID)*@
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Concepto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Forma_pago)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentario)
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReciboID)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Concepto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @switch (item.Forma_pago)
+                {
+                    case 1:
+                        <p>Efectivo</p>
+                        break;
+
+                    case 2:
+                        <p>Transferencia</p>
+                        break;
+
+                    case 3:
+                        <p>Cheque</p>
+                        break;
+
+                    case 4:
+                        <p>Tarjeta</p>
+                        break;
+
+                    case 5:
+                        <p>Dolares</p>
+                        break;
+                }
+
+                @*@Html.DisplayFor(modelItem => item.Forma_pago)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReciboID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReciboID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReciboID })
+            </td>
+        </tr>
+    }
+
+</table>

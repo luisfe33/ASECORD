@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Asesoria Consular</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="icon" src="~/Content/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    @*<link href="~/Content/css/select2.min.css" rel="stylesheet" />*@
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                    <img alt="Logo" src="~/Content/asesord(64).png">
+                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Asesoria Consular RD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!--Casos-->
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Casos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Create","Clientes")">Nuevo Perfil del Cliente</a></li>
+                            <li><a href="@Url.Action("Index","Clientes")">Consulta Perfil del Cliente</a></li>
+                            <li role="separator" class="divider"></li>
+                            @*<li><a href="#">Registro de Casos</a></li>
+                                <li><a href="#">Consultas de Casos</a></li>*@
+                            <li><a href="@Url.Action("Reportes","Clientes")">Reporte de Perfil por Estatus</a></li>
+                            <li role="separator" class="divider"></li>
+                            @*<li><a href="#">Maestro de Provincias</a></li>
+                                <li><a href="#">Maestro de Ciudades</a></li>
+                                <li><a href="#">Maestro de Sectores</a></li>*@
+                            @*<li><a href="#">Maestro de Estatus</a></li>*@
+
+                        </ul>
+                    </li>
+
+                    <!--Citas Locales-->
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Citas ASECORD <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("CL","CitasLocales")">Gestion de Citas</a></li>
+                            <li><a href="@Url.Action("Index","CitasLocales")">Consultas de Citas</a></li>
+                            @*<li><a href="#">Bloqueo de Citas</a></li>*@
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@Url.Action("Create","Recibos")">Recibos </a></li>
+                            <li><a href="@Url.Action("Index","Recibos")">Consultas de Recibos </a></li>
+                            @*<li><a href="#">Cuadre de Caja </a></li>
+                                <li><a href="#">Salidas de Caja (Tikets) </a></li>*@
+                        </ul>
+                    </li>
+
+                    <!--Citas Consulares-->
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Citas Consulares <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("CC","CitasConsulares")">Gestion de Citas Consular</a></li>
+                            <li><a href="@Url.Action("Index","CitasConsulares")">Consultas de Citas Consular</a></li>
+                            @*<li><a href="#">Bloqueo de Citas Consular</a></li>*@
+                            <li role="separator" class="divider"></li>
+                            @*<li><a href="#">Maestro de Consulados</a></li>*@
+                        </ul>
+                    </li>
+
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <b>&copy; @DateTime.Now.Year - Asesoria Consular app web v0.1.0</b>
+        </footer>
+    </div>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+        @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+
+
+    @*<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>*@
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#custompicker").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true
+
+            });
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $("#timepicker").datetimepicker({
+                pick12HourFormat: true,
+                pickDate: false
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body>
+</html>
