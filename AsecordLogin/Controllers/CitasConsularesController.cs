@@ -75,8 +75,10 @@ namespace AsecordLogin.Controllers
         {
             if (ModelState.IsValid)
             {
-                Clientes cliente = db.Clientes.Find(Cliente_CLienteID);
                 db.Citas_Consulares.Add(citas_consulares);
+
+                Clientes cliente = db.Clientes.Find(Cliente_CLienteID);
+                citas_consulares.Cliente = cliente;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
