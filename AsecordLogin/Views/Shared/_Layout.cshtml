@@ -10,7 +10,7 @@
     @*<link href="~/Content/css/select2.min.css" rel="stylesheet" />*@
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/timepicki.css" rel="stylesheet" />
     @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
@@ -90,7 +90,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <b>&copy; @DateTime.Now.Year - Asesoria Consular app web v0.1.0</b>
+            <b>&copy; @DateTime.Now.Year - Asesoria Consular app web v0.3.0</b>
         </footer>
     </div>
 
@@ -105,8 +105,8 @@
     @*<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>*@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-
+    @*<script src="~/Scripts/wickedpicker.min.js"></script>*@
+    <script src="~/Scripts/timepicki.js"></script>
     <script>
         $(function () {
             $("#datepicker").datepicker({
@@ -126,15 +126,9 @@
         });
 
     </script>
-    <script>
-        $(function () {
-            $("#timepicker").datetimepicker({
-                pick12HourFormat: true,
-                pickDate: false
-            });
-        });
+    <script type='text/javascript' >
+	$('#timepicker').timepicki();
     </script>
-
 
 
 

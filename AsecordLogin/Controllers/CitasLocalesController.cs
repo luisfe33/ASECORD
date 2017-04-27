@@ -61,6 +61,22 @@ namespace AsecordLogin.Controllers
                 return HttpNotFound();
             }
 
+            List<SelectListItem> Motivo = new List<SelectListItem>();
+            SelectListItem m0 = new SelectListItem() { Text = "", Value = "0", Selected = true };
+            SelectListItem m1 = new SelectListItem() { Text = "Consulta", Value = "Consulta", Selected = false };
+            SelectListItem m2 = new SelectListItem() { Text = "DS-160", Value = "DS-160", Selected = false };
+            SelectListItem m3 = new SelectListItem() { Text = "Pre-Entrevista", Value = "Pre-Entrevista", Selected = false };
+            SelectListItem m4 = new SelectListItem() { Text = "Perfil", Value = "Perfil", Selected = false };
+            SelectListItem m5 = new SelectListItem() { Text = "Otros", Value = "Otros", Selected = false };
+            Motivo.Add(m0);
+            Motivo.Add(m1);
+            Motivo.Add(m2);
+            Motivo.Add(m3);
+            Motivo.Add(m4);
+            Motivo.Add(m5);
+
+            ViewBag.Motivo = Motivo;
+
             ViewData["ClienteID"] = cliente.CLienteID;
             ViewData["ClienteName"] = cliente.Nombre + " " + cliente.Apellido;
 
@@ -73,7 +89,7 @@ namespace AsecordLogin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CitaID,Fecha,Hora,Tipo,Comentario,Estatus")] Citas_locales citas_locales, int Cliente_CLienteID)
+        public ActionResult Create([Bind(Include = "CitaID,Fecha,Hora,Tipo,Comentario,Estatus,Motivo")] Citas_locales citas_locales, int Cliente_CLienteID)
         {
             if (ModelState.IsValid)
             {
@@ -96,10 +112,36 @@ namespace AsecordLogin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Citas_locales citas_locales = db.Citas_locales.Find(id);
+            Clientes cliente = db.Clientes.Find(id);
+
             if (citas_locales == null)
             {
                 return HttpNotFound();
             }
+            List<SelectListItem> Motivo = new List<SelectListItem>();
+            SelectListItem m0 = new SelectListItem() { Text = "", Value = "0", Selected = true };
+            SelectListItem m1 = new SelectListItem() { Text = "Consulta", Value = "Consulta", Selected = false };
+            SelectListItem m2 = new SelectListItem() { Text = "DS-160", Value = "DS-160", Selected = false };
+            SelectListItem m3 = new SelectListItem() { Text = "Pre-Entrevista", Value = "Pre-Entrevista", Selected = false };
+            SelectListItem m4 = new SelectListItem() { Text = "Perfil", Value = "Perfil", Selected = false };
+            SelectListItem m5 = new SelectListItem() { Text = "Otros", Value = "Otros", Selected = false };
+            Motivo.Add(m0);
+            Motivo.Add(m1);
+            Motivo.Add(m2);
+            Motivo.Add(m3);
+            Motivo.Add(m4);
+            Motivo.Add(m5);
+
+            ViewBag.Motivo = Motivo;
+            if (citas_locales.Motivo != null)
+            {
+                (from t in Motivo where (t.Value == citas_locales.Motivo) select t).First().Selected = true;
+
+            }
+
+            ViewData["ClienteID"] = cliente.CLienteID;
+            ViewData["ClienteName"] = cliente.Nombre + " " + cliente.Apellido;
+
             return View(citas_locales);
         }
 
@@ -108,7 +150,7 @@ namespace AsecordLogin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CitaID,Fecha,Hora,Tipo,Comentario,Estatus")] Citas_locales citas_locales)
+        public ActionResult Edit([Bind(Include = "CitaID,Fecha,Hora,Tipo,Comentario,Estatus,Motivo")] Citas_locales citas_locales)
         {
             if (ModelState.IsValid)
             {

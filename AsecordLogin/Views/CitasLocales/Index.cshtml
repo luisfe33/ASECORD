@@ -22,6 +22,9 @@
             @Html.DisplayNameFor(model => model.Hora)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Motivo)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Comentario)
         </th>
         <th></th>
@@ -32,12 +35,16 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+                @Html.DisplayFor(modelItem => item.Cliente.Apellido)
             </td>
             <td>
-                @Html.DisplayFor(model => item.Fecha)
+                @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comentario)

@@ -15,6 +15,7 @@ namespace AsecordLogin.Models
         public string Fecha { get; set; }
         public string Hora { get; set; }
         public string Tipo { get; set; }
+        public string Motivo { get; set; }
         public string Comentario { get; set; }
         public int Estatus { get; set; }
     }

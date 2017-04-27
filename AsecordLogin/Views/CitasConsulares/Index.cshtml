@@ -23,10 +23,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Lugar)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_visa)
-        </th>
+        </th>    
         <th>
             @Html.DisplayNameFor(model => model.UID)
         </th>
@@ -41,6 +38,7 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Cliente.Nombre)
+                @Html.DisplayFor(modelItem => item.Cliente.Apellido)
             </td>
             <td>
                 @Html.DisplayFor(model => item.Fecha)
@@ -51,9 +49,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Lugar)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Tipo_visa)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.UID)
             </td>
