@@ -60,6 +60,19 @@ namespace AsecordLogin.Controllers
                 return HttpNotFound();
             }
 
+            List<SelectListItem> Lugar = new List<SelectListItem>();
+            SelectListItem L0 = new SelectListItem() { Text = "", Value = "0", Selected = true };
+            SelectListItem L1 = new SelectListItem() { Text = "G360", Value = "G360", Selected = false };
+            SelectListItem L2 = new SelectListItem() { Text = "EUSA", Value = "EUSA", Selected = false };
+            Lugar.Add(L0);
+            Lugar.Add(L1);
+            Lugar.Add(L2);
+
+
+            ViewBag.Lugar = Lugar;
+
+
+
             ViewData["ClienteID"] = cliente.CLienteID;
             ViewBag.ClienteName = cliente.Nombre + " " + cliente.Apellido;
 
@@ -98,6 +111,23 @@ namespace AsecordLogin.Controllers
             {
                 return HttpNotFound();
             }
+
+            List<SelectListItem> Lugar = new List<SelectListItem>();
+            SelectListItem L0 = new SelectListItem() { Text = "", Value = "0", Selected = true };
+            SelectListItem L1 = new SelectListItem() { Text = "G360", Value = "G360", Selected = false };
+            SelectListItem L2 = new SelectListItem() { Text = "EUSA", Value = "EUSA", Selected = false };
+            Lugar.Add(L0);
+            Lugar.Add(L1);
+            Lugar.Add(L2);
+
+
+            ViewBag.Lugar = Lugar;
+            if (citas_consulares.Lugar!= null)
+            {
+                (from t in Lugar where (t.Value == citas_consulares.Lugar) select t).First().Selected = true;
+
+            }
+
             return View(citas_consulares);
         }
 
