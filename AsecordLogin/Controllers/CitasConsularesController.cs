@@ -17,9 +17,22 @@ namespace AsecordLogin.Controllers
         private AsesoriaContext db = new AsesoriaContext();
 
         // GET: CitasConsulares
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Citas_Consulares.Include(p => p.Cliente).ToList());
+
+            var citas = from c in db.Citas_Consulares
+                        select c;
+
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                citas = citas.Where(c => c.Fecha.Contains(searchString)
+                                         || c.Cliente.Nombre.Contains(searchString)
+                                         || c.UID.Contains(searchString));
+            }
+
+
+            return View(citas.Include(p => p.Cliente).ToList());
         }
 
         // GET: CitasConsulares/Details/5
@@ -39,10 +52,18 @@ namespace AsecordLogin.Controllers
 
 
         //GET: CitasConsulares/CC
-        public ActionResult CC()
+        public ActionResult CC(string searchString)
         {
+            var clientes = from c in db.Clientes
+                           select c;
 
-            return View(db.Clientes.ToList());
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                clientes = clientes.Where(c => c.Nombre.Contains(searchString)
+                                         || c.Apellido.Contains(searchString));
+            }
+
+            return View(clientes.ToList());
         }
 
         // GET: CitasConsulares/Create

@@ -17,9 +17,21 @@ namespace AsecordLogin.Controllers
         private AsesoriaContext db = new AsesoriaContext();
 
         // GET: CitasLocales
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Citas_locales.Include(p => p.Cliente).ToList());
+
+            var citas = from c in db.Citas_locales
+                           select c;
+         
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                citas = citas.Where(c => c.Fecha.Contains(searchString)
+                                         || c.Cliente.Nombre.Contains(searchString));
+            }
+
+
+            return View(citas.Include(p => p.Cliente).ToList());
         }
 
         // GET: CitasLocales/Details/5
@@ -30,6 +42,8 @@ namespace AsecordLogin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Citas_locales citas_locales = db.Citas_locales.Find(id);
+            
+
             if (citas_locales == null)
             {
                 return HttpNotFound();
@@ -40,9 +54,18 @@ namespace AsecordLogin.Controllers
 
 
         //GET: CitasLocales/CL
-        public ActionResult CL()
+        public ActionResult CL(string searchString)
         {
-            return View(db.Clientes.ToList());
+            var clientes = from c in db.Clientes
+                           select c;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                clientes = clientes.Where(c => c.Nombre.Contains(searchString)
+                                         || c.Apellido.Contains(searchString));
+            }
+
+            return View(clientes.ToList());
         }
 
 

@@ -4,12 +4,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
-    <h4>Citas_locales</h4>
+    <h4>Citas locales</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Fecha)
         </dt>
@@ -25,13 +33,12 @@
         <dd>
             @Html.DisplayFor(model => model.Hora)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
+            @Html.DisplayNameFor(model => model.Cliente.Tel_1)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Tipo)
+            @Html.DisplayFor(model => model.Cliente.Tel_1)
         </dd>
 
         <dt>
@@ -40,14 +47,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Comentario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estatus)
         </dd>
 
     </dl>

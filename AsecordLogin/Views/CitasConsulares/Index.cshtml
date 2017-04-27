@@ -9,6 +9,21 @@
 @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
+<div class="col-md-offset-7">
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.TextBox("searchString")
+
+            <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </p>
+
+    }
+
+</div>
+
+<br />
+
 <table class="table">
     <tr>
         <th>
@@ -61,7 +76,7 @@
 
             <td>
                 @Html.ActionLink("Editar Cita", "Edit", new { id = item.CitaID }) |
-                @*@Html.ActionLink("Details", "Details", new { id=item.CitaID }) |*@
+                @Html.ActionLink("Details", "Details", new { id=item.CitaID }) |
                 @Html.ActionLink("Eliminar", "Delete", new { id = item.CitaID })
             </td>
         </tr>

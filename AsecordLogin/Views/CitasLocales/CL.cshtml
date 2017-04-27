@@ -1,14 +1,31 @@
 ﻿@model IEnumerable<AsecordLogin.Models.Clientes>
 
 @{
-    ViewBag.Title = "CL";
+    ViewBag.Title = "Citas ASECORD";
 }
 
-<h2>CL</h2>
+<h2>Citas ASECORD</h2>
 
 @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
+
+<div class="col-md-offset-7">
+    @using (Html.BeginForm())
+    {
+        <p>
+            @Html.TextBox("searchString")
+
+            <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </p>
+
+    }
+
+</div>
+
+<br />
+
+
 <table class="table">
     <tr>
         <th>
