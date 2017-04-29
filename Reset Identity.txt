@@ -1,0 +1,1 @@
+DBCC CHECKIDENT (Tabble_name, RESEED, 0)
