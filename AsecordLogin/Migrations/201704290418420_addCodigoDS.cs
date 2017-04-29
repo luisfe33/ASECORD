@@ -1,0 +1,18 @@
+namespace AsecordLogin.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class addCodigoDS : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Clientes", "Codigo_DS", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Clientes", "Codigo_DS");
+        }
+    }
+}

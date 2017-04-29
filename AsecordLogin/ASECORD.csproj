@@ -223,6 +223,10 @@
     <Compile Include="Migrations\201704271753250_addMotivo.Designer.cs">
       <DependentUpon>201704271753250_addMotivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704290418420_addCodigoDS.cs" />
+    <Compile Include="Migrations\201704290418420_addCodigoDS.Designer.cs">
+      <DependentUpon>201704290418420_addCodigoDS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Citas_consulares.cs" />
@@ -370,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704271753250_addMotivo.resx">
       <DependentUpon>201704271753250_addMotivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704290418420_addCodigoDS.resx">
+      <DependentUpon>201704290418420_addCodigoDS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

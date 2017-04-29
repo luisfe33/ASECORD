@@ -60,6 +60,8 @@ namespace AsecordLogin.Models
         public string Estatus_4 { get; set; }
         [Display(Name = "DS-160")]
         public string Estatus_5 { get; set; }
+        [Display(Name ="Codigo DS-160")]
+        public string Codigo_DS { get; set; }
         [Display(Name = "Confirmacion de Citas")]
         public string Estatus_6 { get; set; }
         [Display(Name = "Confirmacion DS-160")]

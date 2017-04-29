@@ -340,14 +340,14 @@
                 <h4 style="color:#1b52aa">Estatus</h4>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Pago </b>
+                    <b class="control-label col-md-2">Pago </b>
                     <div class="col-md-2">
                         @Html.DropDownList("TipoDePago", null, "", new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Perfil </b>
+                    <b class="control-label col-md-2">Perfil </b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_1", null, new { @class = "form-control" })
                     </div>
@@ -358,28 +358,28 @@
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Impuesto </b>
+                    <b class="control-label col-md-2">Impuesto </b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_2", null, new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Citas</b>
+                    <b class="control-label col-md-2">Citas</b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_3", null, new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Documentacion Requerida </b>
+                    <b class="control-label col-md-2">Documentacion Requerida </b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_4", null, new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*DS-160</b>
+                    <b class="control-label col-md-2">DS-160</b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_5", null, "", new { @class = "form-control" })
                     </div>
@@ -388,36 +388,47 @@
                     </div>
                 </div>
 
+
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Confirmacion de Citas</b>
+                    @Html.LabelFor(model => model.Codigo_DS, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-2">
+                        @Html.EditorFor(model => model.Codigo_DS, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Codigo_DS, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <b class="control-label col-md-2">Confirmacion de Citas</b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_6", null, new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Confirmacion DS-160</b>
+                    <b class="control-label col-md-2">Confirmacion DS-160</b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_7", null, new { @class = "form-control" })
                     </div>
                 </div>
 
+
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Formulario Detallado</b>
+                    <b class="control-label col-md-2">Formulario Detallado</b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_8", null, new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Pre-Entrevista </b>
+                    <b class="control-label col-md-2">Pre-Entrevista </b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_9", null, new { @class = "form-control" })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <b class="control-label col-md-2">*Estatus Final </b>
+                    <b class="control-label col-md-2">Estatus Final </b>
                     <div class="col-md-2">
                         @Html.DropDownList("Estatus_10", null, "", new { @class = "form-control" })
                     </div>

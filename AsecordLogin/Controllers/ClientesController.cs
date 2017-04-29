@@ -254,7 +254,7 @@ namespace AsecordLogin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(
-            [Bind(Include = "CLienteID,Nombre,Apellido,Fecha_nacimiento,Cedula,Sexo,Estado_civil,Email,Fecha_ingreso,Pasaporte,Tel_1,Tel_2,Tel_3,Comentario,Estatus_1,Estatus_2,Estatus_3,Estatus_4,Estatus_5,Estatus_6,Estatus_7,Estatus_8,Estatus_9,Estatus_10,TipoDePago,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,Ocupacion,Empresa_Nombre,Empresa_Dir,Empresa_Tel,Empresa_Labor,Direccion")] Clientes clientes
+            [Bind(Include = "CLienteID,Nombre,Apellido,Fecha_nacimiento,Cedula,Sexo,Estado_civil,Email,Fecha_ingreso,Pasaporte,Tel_1,Tel_2,Tel_3,Comentario,Estatus_1,Estatus_2,Estatus_3,Estatus_4,Estatus_5,Estatus_6,Estatus_7,Estatus_8,Estatus_9,Estatus_10,TipoDePago,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,Ocupacion,Empresa_Nombre,Empresa_Dir,Empresa_Tel,Empresa_Labor,Direccion,Codigo_DS")] Clientes clientes
             )
         {
             if (ModelState.IsValid)
@@ -555,7 +555,7 @@ namespace AsecordLogin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(
-            [Bind(Include = "CLienteID,Nombre,Apellido,Fecha_nacimiento,Cedula,Sexo,Estado_civil,Email,Fecha_ingreso,Pasaporte,Tel_1,Tel_2,Tel_3,Comentario,Estatus_1,Estatus_2,Estatus_3,Estatus_4,Estatus_5,Estatus_6,Estatus_7,Estatus_8,Estatus_9,Estatus_10,TipoDePago,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,Ocupacion,Empresa_Nombre,Empresa_Dir,Empresa_Tel,Empresa_Labor,Direccion")] Clientes clientes
+            [Bind(Include = "CLienteID,Nombre,Apellido,Fecha_nacimiento,Cedula,Sexo,Estado_civil,Email,Fecha_ingreso,Pasaporte,Tel_1,Tel_2,Tel_3,Comentario,Estatus_1,Estatus_2,Estatus_3,Estatus_4,Estatus_5,Estatus_6,Estatus_7,Estatus_8,Estatus_9,Estatus_10,TipoDePago,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,Ocupacion,Empresa_Nombre,Empresa_Dir,Empresa_Tel,Empresa_Labor,Direccion,Codigo_DS")] Clientes clientes
                 )
         {
             if (ModelState.IsValid)

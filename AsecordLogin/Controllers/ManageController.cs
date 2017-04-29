@@ -20,6 +20,15 @@ namespace AsecordLogin.Controllers
         {
         }
 
+
+        public ActionResult Roles()
+        {
+
+            return View();
+        }
+
+
+
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
