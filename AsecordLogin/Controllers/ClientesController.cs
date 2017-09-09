@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using AsecordLogin.DAL;
 using AsecordLogin.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace AsecordLogin.Controllers
 {
@@ -16,7 +18,10 @@ namespace AsecordLogin.Controllers
     {
         private AsesoriaContext db = new AsesoriaContext();
 
+
         // GET: Clientes
+        //Autorizacion por roles
+        [Authorize(Roles = "Recepcionista, Administrador, Asesor")]
         public ActionResult Index(string searchString)
         {
 

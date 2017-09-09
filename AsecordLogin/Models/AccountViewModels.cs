@@ -53,9 +53,9 @@ namespace AsecordLogin.Models
         public string Usuario { get; set; }
 
         //[Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        //[Display(Name = "Email")]
+        //[EmailAddress]
+        //public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -68,6 +68,10 @@ namespace AsecordLogin.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Rol del Usuario")]
+        public string Rol { get; set; }
+
         [Required]
         [Display(Name ="Usuario")]
         public string Usuario { get; set; }
